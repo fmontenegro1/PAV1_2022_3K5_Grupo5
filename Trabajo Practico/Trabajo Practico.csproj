@@ -138,6 +138,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StockProductos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\ReporteListadoVentas\DataSetVentas.cs">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteListadoVentas\DataSetVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\ReporteListadoVentas\FrmCargarDatosVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,10 +158,41 @@
     <Compile Include="CapaPresentacion\ReporteListadoVentas\FrmListadoVentas.Designer.cs">
       <DependentUpon>FrmListadoVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\ReporteListadoVentas\El_Sabroso_DBDataSet.Designer.cs">
+    <Compile Include="CapaPresentacion\ReporteVentaCategoria\DataSetVentasCateogorias.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
+      <DependentUpon>DataSetVentasCateogorias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentaCategoria\FrmVentasCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentaCategoria\FrmVentasCategorias.Designer.cs">
+      <DependentUpon>FrmVentasCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentaProveedor\DataSetVentasPorProveedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVentasPorProveedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentaProveedor\FrmVentasPorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentaProveedor\FrmVentasPorProveedor.Designer.cs">
+      <DependentUpon>FrmVentasPorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasPorProducto\DataSetVentasPro.cs">
+      <DependentUpon>DataSetVentasPro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasPorProducto\DataSetVentasPro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVentasPro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasPorProducto\FrmVentasPorProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasPorProducto\FrmVentasPorProductos.Designer.cs">
+      <DependentUpon>FrmVentasPorProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="El_Sabroso_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -181,16 +220,49 @@
     <None Include="CapaPresentacion\ReporteListadoStock\StockProductos.xss">
       <DependentUpon>StockProductos.xsd</DependentUpon>
     </None>
-    <None Include="CapaPresentacion\ReporteListadoVentas\El_Sabroso_DBDataSet.xsc">
-      <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
+    <None Include="CapaPresentacion\ReporteListadoVentas\DataSetVentas.xsc">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
     </None>
-    <None Include="CapaPresentacion\ReporteListadoVentas\El_Sabroso_DBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>El_Sabroso_DBDataSet.Designer.cs</LastGenOutput>
+    <None Include="CapaPresentacion\ReporteListadoVentas\DataSetVentas.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CapaPresentacion\ReporteListadoVentas\El_Sabroso_DBDataSet.xss">
-      <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
+    <None Include="CapaPresentacion\ReporteListadoVentas\DataSetVentas.xss">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentaCategoria\DataSetVentasCateogorias.xsc">
+      <DependentUpon>DataSetVentasCateogorias.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentaCategoria\DataSetVentasCateogorias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentasCateogorias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentaCategoria\DataSetVentasCateogorias.xss">
+      <DependentUpon>DataSetVentasCateogorias.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentaProveedor\DataSetVentasPorProveedor.xsc">
+      <DependentUpon>DataSetVentasPorProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentaProveedor\DataSetVentasPorProveedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentasPorProveedor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentaProveedor\DataSetVentasPorProveedor.xss">
+      <DependentUpon>DataSetVentasPorProveedor.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentasPorProducto\DataSetVentasPro.xsc">
+      <DependentUpon>DataSetVentasPro.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentasPorProducto\DataSetVentasPro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentasPro.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentasPorProducto\DataSetVentasPro.xss">
+      <DependentUpon>DataSetVentasPro.xsd</DependentUpon>
     </None>
     <None Include="El_Sabroso_DBDataSet.xsc">
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
@@ -273,6 +345,18 @@
       <DependentUpon>FrmListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\ReporteListadoVentas\ListadoVentas.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentaCategoria\FrmVentasCategorias.resx">
+      <DependentUpon>FrmVentasCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentaCategoria\VentasCategorias.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentaProveedor\FrmVentasPorProveedor.resx">
+      <DependentUpon>FrmVentasPorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentaProveedor\VentasProveedor.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentasPorProducto\FrmVentasPorProductos.resx">
+      <DependentUpon>FrmVentasPorProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentasPorProducto\VentasPro.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>

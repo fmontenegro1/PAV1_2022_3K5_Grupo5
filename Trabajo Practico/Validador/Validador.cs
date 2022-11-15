@@ -40,7 +40,7 @@ namespace El_Sabroso_App.Validador
             return van;
         }
 
-        internal static string buscar_monto_total(DateTimePicker desde, DateTimePicker hasta)
+        internal static string Buscar_total_ventas(DateTimePicker desde, DateTimePicker hasta)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -69,6 +69,87 @@ namespace El_Sabroso_App.Validador
             }
         }
 
+        internal static DataTable Buscar_ventas_categorias()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT C.nombre as 'Nombre',SUM(P.precio*DT.cantidad) as 'Total'\r\nFROM DETALLE_VENTAS DT\r\nJOIN CATEGORIAS_PROD C ON dt.id_categoria = C.id_categoria\r\nJOIN PRODUCTOS P ON P.Id_producto = DT.Id_producto\r\nGROUP BY C.nombre";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        internal static DataTable Buscar_ventas_producto()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT (p.nombre) as Nombre,(SUM(P.precio*DT.cantidad)) as Total\r\nFROM PRODUCTOS P\r\nJOIN DETALLE_VENTAS DT ON p.Id_producto = DT.Id_producto\r\nGROUP BY P.nombre";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        internal static DataTable Buscar_ventas_proveedor()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT (PR.nombre) as Nombre,(SUM(P.precio*DT.cantidad)) as Total\r\nFROM PRODUCTOS P\r\nJOIN DETALLE_VENTAS DT ON p.Id_producto = DT.Id_producto\r\nJOIN PROVEEDORES PR ON PR.Id_proveedor = P.id_proveedor\r\nGROUP BY PR.nombre";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         internal static DataTable ObtenerDatosVentas(DateTimePicker dtpicdesde, DateTimePicker dtpichasta)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -78,8 +159,8 @@ namespace El_Sabroso_App.Validador
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "SELECT * FROM VENTAS WHERE fecha >= @fechadesde AND fecha <= @fechahasta";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@fechadesde", dtpicdesde.Value);
-                cmd.Parameters.AddWithValue("@fechahasta", dtpichasta.Value);
+                cmd.Parameters.AddWithValue("@fechadesde", dtpicdesde.Value.Date);
+                cmd.Parameters.AddWithValue("@fechahasta", dtpichasta.Value.Date);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
                 cn.Open();
@@ -128,6 +209,9 @@ namespace El_Sabroso_App.Validador
         internal static bool ValidarExistenciaDeVentas(DateTimePicker dateTimePicker1, DateTimePicker dateTimePicker2)
         {
             bool van = false;
+            if (dateTimePicker1.Value.Date == dateTimePicker2.Value.Date) {
+                return true;
+            }
             DataTable tabla = ObtenerDatosVentas(dateTimePicker1, dateTimePicker2);
             if (tabla.Rows.Count != 0)
             {

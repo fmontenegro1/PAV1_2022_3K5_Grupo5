@@ -127,7 +127,7 @@ namespace Trabajo_Practico.CapaPresentacion.abmProveedores
                 if (checkFecha.Checked)
                 {
                     consulta += " AND fecha_alta = @fechaAlta";
-                    cmd.Parameters.AddWithValue("@fechaAlta", dtpFechaAlta.Value);
+                    cmd.Parameters.AddWithValue("@fechaAlta", dtpFechaAlta.Value.Date);
                 }
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
