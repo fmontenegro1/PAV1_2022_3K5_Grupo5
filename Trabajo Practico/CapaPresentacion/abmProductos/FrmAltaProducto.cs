@@ -1,6 +1,7 @@
 ﻿using El_Sabroso_App.CapaEntidades;
 using Microsoft.Reporting.WinForms;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,6 +88,32 @@ namespace Trabajo_Practico.CapaPresentacion.abmProductos
 
                 DataTable resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
                 MessageBox.Show("Producto ingresado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                int numPro = buscar_numPro();
+                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+                SqlConnection cn = new SqlConnection(cadenaConexion);
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    string consulta = "INSERT INTO[dbo].[STOCK]" +
+                                        "([id_producto]" +
+                                        ",[stock])" +
+                                      "VALUES" +
+                                        "(@idProducto" +
+                                        ",0);";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@idProducto",numPro);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+                    cn.Open();
+                    cmd.Connection = cn;
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
                 // Se setean todos los campos
                 resultado.Clear();
                 txtNombre.Clear();
@@ -97,6 +124,37 @@ namespace Trabajo_Practico.CapaPresentacion.abmProductos
 
             }
         }
+
+        private int buscar_numPro()
+        {
+            bool vandera = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "Select IDENT_CURRENT('PRODUCTOS') as 'producto'";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                if (tabla.Rows.Count > 0) { return Int32.Parse(tabla.Rows[0]["producto"].ToString()); }
+                else { return 0; }
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public bool ValidarProducto(String txtNombre)
         {
 

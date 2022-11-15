@@ -244,6 +244,22 @@ namespace Trabajo_Practico.CapaPresentacion
 
                     cmd.CommandText = consultaDetalleFactura;
                     cmd.ExecuteNonQuery();
+                    //buscar stock
+                    int stock = buscarstock(comboProducto.SelectedValue);
+                    if (stock - Decimal.ToInt32(CantProd.Value) < 0) {
+                        MessageBox.Show("No hay suficiente stock");
+                        objTransaction.Rollback();
+                    }
+                    string consultaEliminarStock = "UPDATE [dbo].[STOCK]" +
+                                                    "SET [stock] = @cantidadnueva " +
+                                                    "WHERE id_producto = @id_producto";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id_producto", comboProducto.SelectedValue);
+                    cmd.Parameters.AddWithValue("@cantidadnueva", stock - Decimal.ToInt32(CantProd.Value));
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.CommandText = consultaEliminarStock;
+                    cmd.ExecuteNonQuery();
 
                 }
                 objTransaction.Commit();
@@ -254,6 +270,34 @@ namespace Trabajo_Practico.CapaPresentacion
             {
                 objTransaction.Rollback();
                 MessageBox.Show("La transaccion no se pudo completar");
+
+                throw;
+            }
+        }
+
+        private int buscarstock(object selectedValue)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT stock FROM STOCK WHERE id_producto = @id_producto";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_producto", selectedValue);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return (int)tabla.Rows[0][0];
+
+            }
+            catch (Exception)
+            {
 
                 throw;
             }
