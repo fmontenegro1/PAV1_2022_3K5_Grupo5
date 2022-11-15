@@ -49,8 +49,8 @@ namespace El_Sabroso_App.Validador
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "SELECT SUM(CONVERT(float,monto)) FROM VENTAS WHERE fecha >= @fechadesde AND fecha <= @fechahasta";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@fechadesde", desde.Value);
-                cmd.Parameters.AddWithValue("@fechahasta", hasta.Value);
+                cmd.Parameters.AddWithValue("@fechadesde", desde.Value.Date);
+                cmd.Parameters.AddWithValue("@fechahasta", hasta.Value.Date);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
                 cn.Open();
@@ -186,7 +186,7 @@ namespace El_Sabroso_App.Validador
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT P.nombre as 'Producto',S.stock as 'Cantidad' FROM PRODUCTOS P JOIN STOCK S ON P.Id_producto = S.id_producto";
+                string consulta = "SELECT P.nombre as 'Producto',S.stock as 'Cantidad' FROM PRODUCTOS P JOIN STOCK S ON P.Id_producto = S.id_producto WHERE p.activo = 'S'";
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;

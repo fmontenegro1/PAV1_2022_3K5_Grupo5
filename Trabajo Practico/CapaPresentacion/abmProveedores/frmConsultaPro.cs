@@ -154,5 +154,10 @@ namespace Trabajo_Practico.CapaPresentacion.abmProveedores
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();  
+        }
     }
 }

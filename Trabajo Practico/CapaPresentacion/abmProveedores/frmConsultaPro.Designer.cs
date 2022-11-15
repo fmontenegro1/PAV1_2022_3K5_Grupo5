@@ -55,6 +55,7 @@
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_alta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.grbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProv)).BeginInit();
             this.SuspendLayout();
@@ -295,11 +296,22 @@
             this.fecha_alta.Name = "fecha_alta";
             this.fecha_alta.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(640, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 20);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmConsultaPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnLimpiarDatos);
@@ -346,5 +358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ciudad;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_alta;
+        private System.Windows.Forms.Button button1;
     }
 }

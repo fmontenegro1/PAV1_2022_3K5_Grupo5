@@ -92,5 +92,11 @@ namespace Trabajo_Practico
             FrmVentasPorProveedor ventana = new FrmVentasPorProveedor();
             ventana.ShowDialog();
         }
+
+        private void fAQToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ayuda vendana = new Ayuda();
+            vendana.ShowDialog();
+        }
     }
 }
