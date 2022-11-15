@@ -248,7 +248,7 @@ namespace Trabajo_Practico.CapaPresentacion
                     int stock = buscarstock(comboProducto.SelectedValue);
                     if (stock - Decimal.ToInt32(CantProd.Value) < 0) {
                         MessageBox.Show("No hay suficiente stock");
-                        objTransaction.Rollback();
+                        return;
                     }
                     string consultaEliminarStock = "UPDATE [dbo].[STOCK]" +
                                                     "SET [stock] = @cantidadnueva " +
