@@ -42,10 +42,10 @@
             this.nuevaVentaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockDisponibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.stockDisponibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -153,9 +153,16 @@
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // stockDisponibleToolStripMenuItem
+            // 
+            this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
+            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.stockDisponibleToolStripMenuItem.Text = "Stock Disponible";
+            this.stockDisponibleToolStripMenuItem.Click += new System.EventHandler(this.stockDisponibleToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -174,30 +181,27 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.WhiteSpace;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(355, 124);
+            this.pictureBox1.Location = new System.Drawing.Point(338, 152);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 257);
+            this.pictureBox1.Size = new System.Drawing.Size(516, 332);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // stockDisponibleToolStripMenuItem
-            // 
-            this.stockDisponibleToolStripMenuItem.Name = "stockDisponibleToolStripMenuItem";
-            this.stockDisponibleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.stockDisponibleToolStripMenuItem.Text = "Stock Disponible";
-            this.stockDisponibleToolStripMenuItem.Click += new System.EventHandler(this.stockDisponibleToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1089, 496);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "El Sabroso App";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

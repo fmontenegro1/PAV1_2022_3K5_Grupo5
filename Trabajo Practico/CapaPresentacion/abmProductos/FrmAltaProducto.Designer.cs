@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaProducto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboCategoria = new System.Windows.Forms.ComboBox();
             this.comboProveedor = new System.Windows.Forms.ComboBox();
@@ -191,8 +192,10 @@
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAltaProducto";
-            this.Text = "FrmAltaProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alta Producto";
             this.Load += new System.EventHandler(this.FrmAltaProducto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
