@@ -155,6 +155,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVentasCategorias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasCategoria\FrmVentasCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ReporteVentasCategoria\FrmVentasCategoria.Designer.cs">
+      <DependentUpon>FrmVentasCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="El_Sabroso_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,6 +197,17 @@
     </None>
     <None Include="CapaPresentacion\ReporteListadoVentas\El_Sabroso_DBDataSet.xss">
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.xsc">
+      <DependentUpon>DataSetVentasCategorias.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentasCategorias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.xss">
+      <DependentUpon>DataSetVentasCategorias.xsd</DependentUpon>
     </None>
     <None Include="El_Sabroso_DBDataSet.xsc">
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
@@ -268,6 +290,10 @@
       <DependentUpon>FrmListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\ReporteListadoVentas\ListadoVentas.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentasCategoria\FrmVentasCategoria.resx">
+      <DependentUpon>FrmVentasCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ReporteVentasCategoria\VentaCategoria.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup />
