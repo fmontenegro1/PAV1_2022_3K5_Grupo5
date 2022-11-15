@@ -10,33 +10,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Trabajo_Practico.CapaPresentacion.Reports
+namespace Trabajo_Practico.CapaPresentacion.ReporteVentaCategoria
 {
-    public partial class FrmListadoVentas : Form
+    public partial class FrmVentasCategorias : Form
     {
-        DateTimePicker desde;
-        DateTimePicker hasta;
-        public FrmListadoVentas()
+        public FrmVentasCategorias()
         {
             InitializeComponent();
         }
 
-        internal void inicializar(DateTimePicker dateTimePicker1, DateTimePicker dateTimePicker2)
+        private void FrmVentasCategorias_Load(object sender, EventArgs e)
         {
-            desde = dateTimePicker1;
-            hasta = dateTimePicker2;
-        }
 
-        private void FrmListadoVentas_Load(object sender, EventArgs e)
-        {
-            textBox1.Text = Validador.Buscar_total_ventas(desde,hasta);
             this.reportViewer1.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            DataTable tabla = Validador.ObtenerDatosVentas(desde, hasta);
-            ReportDataSource ds = new ReportDataSource("Ventas",tabla);
+            DataTable tabla = Validador.Buscar_ventas_categorias();
+            ReportDataSource ds = new ReportDataSource("Categoria",tabla);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.LocalReport.Refresh();

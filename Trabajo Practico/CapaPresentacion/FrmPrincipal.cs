@@ -12,6 +12,9 @@ using Trabajo_Practico.CapaPresentacion;
 using Trabajo_Practico.CapaPresentacion.abmProductos;
 using Trabajo_Practico.CapaPresentacion.abmProveedores;
 using Trabajo_Practico.CapaPresentacion.ReporteListadoStock;
+using Trabajo_Practico.CapaPresentacion.ReporteVentaCategoria;
+using Trabajo_Practico.CapaPresentacion.ReporteVentaProveedor;
+using Trabajo_Practico.CapaPresentacion.ReporteVentasPorProducto;
 using Trabajo_Practico.CapaPresentacion.Reports;
 
 namespace Trabajo_Practico
@@ -69,6 +72,24 @@ namespace Trabajo_Practico
         private void stockDisponibleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListadoStockPro ventana = new FrmListadoStockPro();
+            ventana.ShowDialog();
+        }
+
+        private void ventasPorCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVentasCategorias ventana = new FrmVentasCategorias();
+            ventana.ShowDialog();
+        }
+
+        private void ventasPorProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVentasPorProductos ventana = new FrmVentasPorProductos();
+            ventana.ShowDialog();
+        }
+
+        private void ventasPorProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVentasPorProveedor ventana = new FrmVentasPorProveedor();
             ventana.ShowDialog();
         }
     }

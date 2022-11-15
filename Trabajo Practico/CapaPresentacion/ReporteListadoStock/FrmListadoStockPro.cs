@@ -21,7 +21,6 @@ namespace Trabajo_Practico.CapaPresentacion.ReporteListadoStock
 
         private void FrmListadoStockPro_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 
