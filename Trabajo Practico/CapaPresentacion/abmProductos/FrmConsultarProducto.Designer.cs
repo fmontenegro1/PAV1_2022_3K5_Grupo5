@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarProducto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgbProductos = new System.Windows.Forms.DataGridView();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -220,8 +221,10 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultarProducto";
-            this.Text = "FrmConsultarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consultar Producto";
             this.Load += new System.EventHandler(this.FrmConsultarProducto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

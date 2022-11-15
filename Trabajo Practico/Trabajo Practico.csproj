@@ -155,17 +155,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetVentasCategorias.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\ReporteVentasCategoria\FrmVentasCategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapaPresentacion\ReporteVentasCategoria\FrmVentasCategoria.Designer.cs">
-      <DependentUpon>FrmVentasCategoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="El_Sabroso_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,6 +163,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validador\Validador.cs" />
     <None Include="CapaPresentacion\ReporteListadoStock\StockProductos.xsc">
@@ -197,17 +191,6 @@
     </None>
     <None Include="CapaPresentacion\ReporteListadoVentas\El_Sabroso_DBDataSet.xss">
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.xsc">
-      <DependentUpon>DataSetVentasCategorias.xsd</DependentUpon>
-    </None>
-    <None Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetVentasCategorias.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CapaPresentacion\ReporteVentasCategoria\DataSetVentasCategorias.xss">
-      <DependentUpon>DataSetVentasCategorias.xsd</DependentUpon>
     </None>
     <None Include="El_Sabroso_DBDataSet.xsc">
       <DependentUpon>El_Sabroso_DBDataSet.xsd</DependentUpon>
@@ -290,11 +273,10 @@
       <DependentUpon>FrmListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\ReporteListadoVentas\ListadoVentas.rdlc" />
-    <EmbeddedResource Include="CapaPresentacion\ReporteVentasCategoria\FrmVentasCategoria.resx">
-      <DependentUpon>FrmVentasCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\ReporteVentasCategoria\VentaCategoria.rdlc" />
-    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarProducto));
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.cboProveedor = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,7 @@
             this.grbEditar.Size = new System.Drawing.Size(188, 200);
             this.grbEditar.TabIndex = 2;
             this.grbEditar.TabStop = false;
-            this.grbEditar.Text = "EditarProductos";
+            this.grbEditar.Text = "Editar Productos";
             // 
             // cboCategoria
             // 
@@ -186,7 +187,7 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // frmEditarProduto
+            // frmEditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,8 +195,10 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.grbEditar);
-            this.Name = "frmEditarProduto";
-            this.Text = "frmEditarProduto";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmEditarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Editar Produto";
             this.Load += new System.EventHandler(this.frmEditarProduto_Load);
             this.grbEditar.ResumeLayout(false);
             this.grbEditar.PerformLayout();
