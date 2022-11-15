@@ -40,6 +40,35 @@ namespace El_Sabroso_App.Validador
             return van;
         }
 
+        internal static string buscar_monto_total(DateTimePicker desde, DateTimePicker hasta)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT SUM(CONVERT(float,monto)) FROM VENTAS WHERE fecha >= @fechadesde AND fecha <= @fechahasta";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@fechadesde", desde.Value);
+                cmd.Parameters.AddWithValue("@fechahasta", hasta.Value);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla.Rows[0][0].ToString();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         internal static DataTable ObtenerDatosVentas(DateTimePicker dtpicdesde, DateTimePicker dtpichasta)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

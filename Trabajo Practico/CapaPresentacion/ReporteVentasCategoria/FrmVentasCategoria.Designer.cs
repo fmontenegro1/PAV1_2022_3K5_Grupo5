@@ -1,6 +1,6 @@
-﻿namespace Trabajo_Practico.CapaPresentacion.Reports
+﻿namespace Trabajo_Practico.CapaPresentacion.ReporteVentasCategoria
 {
-    partial class FrmListadoVentas
+    partial class FrmVentasCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -29,57 +29,32 @@
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Trabajo_Practico.CapaPresentacion.ReporteListadoVentas.ListadoVentas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(414, 424);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(302, 399);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(262, 402);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Total:";
-            // 
-            // FrmListadoVentas
+            // FrmVentasCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 424);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FrmListadoVentas";
-            this.Text = "FrmListadoVentas";
-            this.Load += new System.EventHandler(this.FrmListadoVentas_Load);
+            this.Name = "FrmVentasCategoria";
+            this.Text = "FrmVentasCategoria";
+            this.Load += new System.EventHandler(this.FrmVentasCategoria_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
     }
 }

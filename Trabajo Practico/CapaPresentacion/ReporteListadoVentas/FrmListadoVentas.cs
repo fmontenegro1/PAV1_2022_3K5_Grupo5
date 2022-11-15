@@ -29,7 +29,7 @@ namespace Trabajo_Practico.CapaPresentacion.Reports
 
         private void FrmListadoVentas_Load(object sender, EventArgs e)
         {
-
+            textBox1.Text = Validador.buscar_monto_total(desde, hasta);
             this.reportViewer1.RefreshReport();
         }
 
