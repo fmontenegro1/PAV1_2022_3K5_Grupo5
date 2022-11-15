@@ -27,7 +27,7 @@ namespace Trabajo_Practico.CapaPresentacion
         private void cargarProductoInicial()
         {
             String consultaSql = string.Concat("" +
-              "SELECT * from PRODUCTOS " +
+              "SELECT * from PRODUCTOS WHERE activo = 'S'" +
               " ");
 
             DataTable resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
@@ -54,7 +54,7 @@ namespace Trabajo_Practico.CapaPresentacion
         {
 
             String consultaSql = string.Concat("" +
-                "SELECT * from PROVEEDORES ");
+                "SELECT * from PROVEEDORES");
 
             DataTable resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
             comboProveedor.DataSource = resultado;

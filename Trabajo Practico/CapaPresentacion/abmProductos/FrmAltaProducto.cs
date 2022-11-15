@@ -192,7 +192,7 @@ namespace Trabajo_Practico.CapaPresentacion.abmProductos
         {
 
             String consultaSql = string.Concat("" +
-                "SELECT * from PROVEEDORES ");
+                "SELECT * from PROVEEDORES WHERE activo = 1 ");
 
             DataTable resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
             comboProveedor.DataSource = resultado;
