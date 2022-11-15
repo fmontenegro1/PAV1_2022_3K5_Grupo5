@@ -266,7 +266,7 @@
             // 
             // CantProd
             // 
-            this.CantProd.Location = new System.Drawing.Point(69, 7);
+            this.CantProd.Location = new System.Drawing.Point(69, 61);
             this.CantProd.Name = "CantProd";
             this.CantProd.Size = new System.Drawing.Size(103, 20);
             this.CantProd.TabIndex = 32;
@@ -274,7 +274,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(9, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 31;
@@ -300,7 +300,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 39);
+            this.label1.Location = new System.Drawing.Point(9, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 28;
@@ -319,7 +319,7 @@
             // Producto
             // 
             this.Producto.AutoSize = true;
-            this.Producto.Location = new System.Drawing.Point(9, 63);
+            this.Producto.Location = new System.Drawing.Point(12, 9);
             this.Producto.Name = "Producto";
             this.Producto.Size = new System.Drawing.Size(53, 13);
             this.Producto.TabIndex = 26;
@@ -328,7 +328,7 @@
             // comboProducto
             // 
             this.comboProducto.FormattingEnabled = true;
-            this.comboProducto.Location = new System.Drawing.Point(68, 60);
+            this.comboProducto.Location = new System.Drawing.Point(68, 6);
             this.comboProducto.Name = "comboProducto";
             this.comboProducto.Size = new System.Drawing.Size(104, 21);
             this.comboProducto.TabIndex = 25;
